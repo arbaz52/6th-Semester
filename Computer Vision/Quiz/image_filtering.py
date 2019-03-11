@@ -1,5 +1,6 @@
 import math
 import numpy
+import contrast_stretching
 def create_image():
     image = []
     for i in range(7):
@@ -39,8 +40,7 @@ def filter_image(image, filter_, v = False):
                 new_image[i][j] = int(value/v)
             else:
                 new_image[i][j] = int(value/diviser)
-            
-    return numpy.asarray(new_image)
+    return contrast_stretching.constrast_stretching_2d(255, new_image)
 
 def grad_image(gx, gy):
     new_image = []
@@ -49,7 +49,7 @@ def grad_image(gx, gy):
         for j in range(len(gx[i])):
             row.append(int(math.sqrt(math.pow(gx[i][j], 2) + math.pow(gy[i][j], 2))))
         new_image.append(row)
-    return numpy.asarray(new_image)
+    return numpy.asarray(new_image, numpy.uint8)
 
 def display_image(img):
     print()

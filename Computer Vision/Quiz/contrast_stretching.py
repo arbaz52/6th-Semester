@@ -83,7 +83,7 @@ def constrast_stretching_2d(_range, img):
         for j in range(matrix_width):
             row.append(int((_range*(img[i][j] - _min))/(_max - _min)))
         new_image.append(row)
-    return numpy.asarray(new_image)
+    return numpy.asarray(new_image, numpy.uint8)
         
 
 img = []

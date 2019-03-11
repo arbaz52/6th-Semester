@@ -35,7 +35,6 @@ image_array = numpy.array(image)
 #scaling down image for use
 image_array = image_sampling.down_sample_2d(image_array, len(image_array[0])/5, len(image_array)/5)
 
-
 display_image(image_array)
 inverted_image_array = invert_image(image_array)
 
@@ -48,7 +47,6 @@ filter_5_5 = [[1,1,1,1,1], [1,1,1,1,1], [1,1,1,1,1], [1,1,1,1,1], [1,1,1,1,1]]
 filter_3_3 = [[1,1,1], [1,1,1], [1,1,1]]
 filtered_image_array = image_filtering.filter_image(image_array, filter_5_5)
 display_image(filtered_image_array)
-
 hor_filter = [[1,0,-1], [1,0,-1], [1,0,-1]]
 ver_filter = [[1,1,1], [0,0,0], [-1,-1,-1]]
 
