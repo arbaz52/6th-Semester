@@ -104,17 +104,18 @@ class Graph:
     
     def astar(self, start, end):
         visited = []
-        queue = [(start, 0, self.getDis(start))]
+        queue = [(start, 0, self.getDis(start), 0)]
         while queue:
-            node, dis, h = queue.pop(0)
+            node, dis, h, temp = queue.pop(0)
             if node not in visited:
                 visited += [node]
                 if node == end:
                     break
                 for child in self.get_children(node):
                     if child[0] not in visited:
-                        queue += [(child[0], child[1] + dis, self.getDis(child[0]))]
+                        queue += [(child[0], child[1] + dis, self.getDis(child[0]), child[1])]
                 queue.sort(key = lambda queue: queue[1]+queue[2])
+                print(queue)
         return visited
                         
 
