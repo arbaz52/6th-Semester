@@ -1,48 +1,4 @@
-"""
-cities = [
-'Arad',
-'Bucharest',
-'Craivoa',
-'Dobreta',
-'Eforie',
-'Fagaras',
-'Giurgiu',
-'Hirsova',
-'Iasi',
-'Lugoj',
-'Mehadia',
-'Neamt',
-'Oradea',
-'Pitesti',
-'Rimnicu Vilcea',
-'Sibiu',
-'Timisoara',
-'Urziceni',
-'Vaslui',
-'Zerind']
 
-end = "Bucharest"
-citiesWithSLDistance = []
-for i in cities:
-    dis = int(input("Enter distance from {} to {}:".format(i, end)))
-    citiesWithSLDistance += [(i, dis)]
-"""
-
-
-
-
-
-
-
-
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar  7 09:49:24 2019
-
-@author: comsats
-"""
-
-import math
 
 
 class Edge:
@@ -157,9 +113,8 @@ class Graph:
                     break
                 for child in self.get_children(node):
                     if child[0] not in visited:
-                        queue += [(child[0], child[1], self.getDis(child[0]))]
+                        queue += [(child[0], child[1] + dis, self.getDis(child[0]))]
                 queue.sort(key = lambda queue: queue[1]+queue[2])
-            print(queue)
         return visited
                         
 
@@ -200,18 +155,13 @@ g = Graph()
 g.create_graph(cityGraph)
 
 start = "Arad"
-end = "Zerind"
+end = "Bucharest"
 print("Path from {} to {} using Greedy Best First Search:".format(start, end))
 print(g.gbfs(start, end))
 
 print("\n\n")
 start = "Arad"
 end = "Bucharest"
-print("Path from {} to {} using Greedy Best First Search:".format(start, end))
+print("Path from {} to {} using A Star Search:".format(start, end))
 print(g.astar(start, end))
 print("\n\n")
-
-start = "Iasi"
-end = "Bucharest"
-print("Path from {} to {} using Greedy Best First Search:".format(start, end))
-print(g.gbfs(start, end))
