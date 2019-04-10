@@ -38,12 +38,12 @@ def mouse_callback_handler(event, x, y, flags, param):
         image_width = len(image[0])
         image_height = len(image)
         filter_ = [[12,12,12],[12,1,12],[12,12,12]]
-        value = 0
         diviser = 0
         filter_center_row = int(len(filter_)/2)
         filter_center_col = int(len(filter_[0])/2)
         for i in range(y-3, y+4):
             for j in range(x-3, x + 4):
+                value = 0
                 for k in range(len(filter_)):
                     row_index = k - filter_center_row + i
                     for l in range(len(filter_[k])):

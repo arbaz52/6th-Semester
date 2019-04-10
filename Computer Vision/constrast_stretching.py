@@ -96,9 +96,9 @@ for i in range(7):
         line.append(150)
     img.append(line)
 
-"""
 a16 = constrast_stretching_2d(16, img)
 display_matrix(a16)
+"""
 a32 = constrast_stretching_2d(32, img)
 display_matrix(a32)
 a255 = constrast_stretching_2d(255, img)
