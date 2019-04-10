@@ -54,7 +54,15 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 model.load_weights("model_state")
 
 #prediction
-print(predict(model, "C:/Users/Shark/Desktop/two.png"))
-print(predict(model, "C:/Users/Shark/Desktop/seven.png"))
+print(predict(model, "images/zero.png"))
+print(predict(model, "images/one.png"))
+print(predict(model, "images/two.png"))
+print(predict(model, "images/three.png"))
+print(predict(model, "images/four.png"))
+print(predict(model, "images/five.png"))
+print(predict(model, "images/six.png"))
+print(predict(model, "images/seven.png"))
+print(predict(model, "images/eight.png"))
+print(predict(model, "images/nine.png"))
 
     
